@@ -16,28 +16,39 @@ class QuestionnairePage(BasePage):
         submit_button.click()
 
     def fill_in_user_information(self):
+        sleep(1)
         first_name_field = self.find_element(QuestionnairePageLocators.LOCATOR_FIRST_NAME_FIELD)
         first_name_field.click()
+        sleep(1)
         first_name_field.send_keys("Gray")
+        sleep(1)
         best_field = self.find_element(QuestionnairePageLocators.LOCATOR_BEST_FIELD)
         best_field.click()
+        sleep(1)
         choose_kindest_list = self.find_element(QuestionnairePageLocators.LOCATOR_CHOOSE_KINDEST_LIST)
         choose_kindest_list.click()
+        sleep(1)
         friend_field = self.find_element(QuestionnairePageLocators.LOCATOR_FRIEND_FIELD)
         friend_field.click()
+        sleep(1)
         choose_parent_list = self.find_element(QuestionnairePageLocators.LOCATOR_CHOOSE_PARENT_LIST)
         choose_parent_list.click()
+
         grede_field = self.find_element(QuestionnairePageLocators.LOCATOR_GRADE_FIELD)
         grede_field.click()
+        sleep(1)
         choose_i_list = self.find_element(QuestionnairePageLocators.LOCATOR_CHOOSE_I_LIST)
         choose_i_list.click()
+        sleep(1)
         type_cancer_field = self.find_element(QuestionnairePageLocators.LOCATOR_TYPE_CANCER_FIELD)
         type_cancer_field.click()
+        sleep(1)
         choose_bladder_list = self.find_element(QuestionnairePageLocators.LOCATOR_CHOOSE_BLADDER_LIST)
         choose_bladder_list.click()
+        sleep(1)
         submit_button = self.find_element(QuestionnairePageLocators.LOCATOR_SUBMIT_BUTTON)
         submit_button.click()
-        sleep(20)
+        sleep(2)
 
     def close_questionnaire(self):
         sleep(2)
@@ -45,6 +56,3 @@ class QuestionnairePage(BasePage):
         print("check close button %s"% close_button.is_displayed())
         close_button.click()
         sleep(2)
-
-
-
