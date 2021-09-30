@@ -26,7 +26,7 @@ def test_signup_in_the_system(browser):
         signup_page.signup(firstname, lastname, email, passwd)
     with allure.step("Close the questionnaire"):
         questionnaire_page = QuestionnairePage(browser)
-        questionnaire_page.choose_patient_role()
+        # questionnaire_page.choose_supporter_role()
         questionnaire_page.should_be_questionnaire_page()
         questionnaire_page.close_questionnaire()
     with allure.step("Check Fridge door page is open"):

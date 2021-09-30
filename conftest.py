@@ -17,7 +17,7 @@ import allure
 
 @pytest.fixture()
 def browser():
-    driver = webdriver.Chrome("./chromedriver 4")
+    driver = webdriver.Chrome("./chromedriver 5")
     driver.maximize_window()
     driver.implicitly_wait(3)
     yield driver
