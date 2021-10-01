@@ -1,6 +1,6 @@
 from selenium import webdriver
 import pytest
-from api.api import Api
+# from api.api import Api
 import allure
 
 
