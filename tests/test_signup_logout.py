@@ -7,7 +7,7 @@ from pages.fridge_door_page import FridgeDoorPage
 from pages.header_bar_page import HeaderBarPage
 from pages.login_page import LoginPage
 import allure
-import random
+# import random
 
 
 @allure.feature("Check user can Sign Up in the system with valid data")
@@ -29,7 +29,6 @@ def test_signup_in_the_system(browser):
         signup_page.signup(firstname, lastname, email, passwd)
     with allure.step("Close the questionnaire"):
         questionnaire_page = QuestionnairePage(browser)
-        # questionnaire_page.choose_supporter_role()
         questionnaire_page.should_be_questionnaire_page()
         questionnaire_page.close_questionnaire()
     with allure.step("Check Fridge door page is open"):

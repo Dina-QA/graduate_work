@@ -1,11 +1,10 @@
 from pages.base_page import BasePage
 from locators.signup_page_locators import SignupPageLocators
-from time import sleep
+
 
 class SignupPage(BasePage):
     def should_be_signup_page(self):
         signup_text = self.find_element(SignupPageLocators.LOCATOR_SIGNUP_TEXT)
-        sleep(0.5)
         signup_text = signup_text.text
         text_check = 'Get Early Access'
         assert signup_text == text_check, f'{signup_text} is not equal to {text_check}'

@@ -1,3 +1,4 @@
+from datetime import datetime
 from pages.landing_page import LandingPage
 from pages.signup_page import SignupPage
 from pages.questionnaire_page import QuestionnairePage
@@ -5,14 +6,13 @@ from pages.fridge_door_page import FridgeDoorPage
 from pages.header_bar_page import HeaderBarPage
 from pages.login_page import LoginPage
 import allure
-import random
 
 
 @allure.feature("Check user can Sign Up in the system with valid data")
 def test_signup_in_the_system(browser):
     firstname = 'Dina'
     lastname = 'Smith'
-    email = f"dina+{random.randint(0, 500)}@onevillage.io"
+    email = f"dina+{datetime.now().strftime('%Y%m%d%H%M%S')}@onevillage.io"
     passwd = "1234567890_OV"
     with allure.step("Open Landing page"):
         landing_page = LandingPage(browser)
