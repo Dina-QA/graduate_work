@@ -1,18 +1,18 @@
 from selenium import webdriver
 import pytest
-# from api.api import Api
+from api.api import Api
 import allure
 
 
-# @pytest.fixture()
-# @allure.feature("User can login/logout in the system")
-# def login_api():
-#     with allure.step("Check user can login in the system"):
-#         api = Api()
-#         api.login("dina@onevillage.io", "1234567890_OV")
-#         yield api
-#     with allure.step("Check user can logout in the system"):
-#         api.logout()
+@pytest.fixture()
+@allure.feature("User can login/logout in the system")
+def login_api():
+    with allure.step("Check user can login in the system"):
+        api = Api()
+        api.login("dina@onevillage.io", "1234567890_OV")
+        yield api
+    with allure.step("Check user can logout in the system"):
+        api.logout()
 
 
 # @pytest.fixture()
@@ -31,6 +31,7 @@ def browser():
     chrome_options.add_argument('--disable-gpu')
     browser = webdriver.Chrome(chrome_options=chrome_options)
     browser.maximize_window()
+    browser.implicitly_wait(3)
     yield browser
     browser.quit()
 
