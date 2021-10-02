@@ -30,7 +30,8 @@ def browser():
     chrome_options.add_argument('--headless')
     chrome_options.add_argument('--disable-gpu')
     browser = webdriver.Chrome(chrome_options=chrome_options)
-    browser.maximize_window()
+    browser.set_window_size(1400, 1000)
+    # browser.maximize_window()
     browser.implicitly_wait(3)
     yield browser
     browser.quit()
