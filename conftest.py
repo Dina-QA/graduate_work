@@ -26,9 +26,9 @@ import allure
 @pytest.fixture()
 def browser():
     chrome_options = webdriver.ChromeOptions()
-    chrome_options.add_argument('--no-sandbox')
-    chrome_options.add_argument('--headless')
-    chrome_options.add_argument('--disable-gpu')
+    chrome_options.add_argument("--no-sandbox")
+    chrome_options.add_argument("--headless")
+    chrome_options.add_argument("--disable-gpu")
     browser = webdriver.Chrome(chrome_options=chrome_options)
     browser.set_window_size(1400, 1000)
     # browser.maximize_window()
@@ -43,10 +43,10 @@ def pytest_runtest_makereport(item):
     rep = outcome.get_result()
     if rep.failed:
         try:
-            if 'browser' in item.fixturenames:
-                browser = item.funcargs['browser']
+            if "browser" in item.fixturenames:
+                browser = item.funcargs["browser"]
             else:
-                print('Does not have browser fixture')
+                print("Does not have browser fixture")
                 return
             allure.attach(browser.get_screenshot_as_png(), "Screenshot", attachment_type=allure.attachment_type.PNG)
         except Exception as e:
