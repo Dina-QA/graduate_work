@@ -25,8 +25,8 @@ class Api:
         url = self.base_url + "/user/"
         response = requests.get(url, headers=self.headers)
         json_response = response.json()
-        result = re.sub(r'\+.+@', '@', json_response["email"])
-        email = re.sub(r'\+.+@', '@', email)
+        result = re.sub(r"\+.+@", "@", json_response["email"])
+        email = re.sub(r"\+.+@", "@", email)
         assert result == email
 
     def reset_password(self, email):

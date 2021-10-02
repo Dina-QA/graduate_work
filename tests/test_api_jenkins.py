@@ -2,7 +2,7 @@ import allure
 from api.api import Api
 
 
-@allure.feature(" Check user exist in the system by e-mail, Reset password")
+@allure.feature("Check user exist in the system by e-mail, Reset password")
 def test_api_scenario():
     with allure.step("Check user can log in to the system"):
         api = Api()
