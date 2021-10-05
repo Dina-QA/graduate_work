@@ -11,7 +11,7 @@ import allure
 
 @allure.feature("Check user can Log In to the system and add product to the cart")
 def test_add_product_to_cart(browser):
-    email = "Brad_br+04@onevillage.io"
+    email = "dshunkina+11311@remedypointsolutions.com"
     passwd = "1234567890_OV"
     with allure.step("Open Landing page"):
         landing_page = LandingPage(browser)
