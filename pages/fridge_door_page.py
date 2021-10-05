@@ -15,8 +15,8 @@ class FridgeDoorPage(BasePage):
         #     name="pns",
         #     attachment_type=AttachmentType.PNG
         # )
-        name_user = 'Dina'
-        check_text_fridge_page = f'👋 {name_user}, welcome to OneVillage!'
+        name_user = "Dina"
+        check_text_fridge_page = f"👋 {name_user}, welcome to OneVillage!"
         welcome_text = self.find_element(FridgeDoorPageLocators.LOCATOR_WELCOME_AFTER_CLOSE_QUESTION_TEXT).text
         print(welcome_text)
         assert welcome_text == check_text_fridge_page, f"{welcome_text} is not equal to {check_text_fridge_page} "
